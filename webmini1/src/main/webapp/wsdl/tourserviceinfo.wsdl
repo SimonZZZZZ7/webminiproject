@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="TourServiceInfoService" targetNamespace="http://www.webmini1" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://www.webmini1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema">
+  <import namespace="http://www.webmini1" schemaLocation="tourserviceinfo_schema1.xsd"/>
+</schema>
+  </wsdl:types>
+  <wsdl:message name="getTouristInfo">
+    <wsdl:part name="parameters" element="tns:getTouristInfo">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getTouristInfoResponse">
+    <wsdl:part name="parameters" element="tns:getTouristInfoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="TourServiceInfo">
+    <wsdl:operation name="getTouristInfo">
+      <wsdl:input name="getTouristInfo" message="tns:getTouristInfo">
+    </wsdl:input>
+      <wsdl:output name="getTouristInfoResponse" message="tns:getTouristInfoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="TourServiceInfoServiceSoapBinding" type="tns:TourServiceInfo">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="getTouristInfo">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getTouristInfo">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getTouristInfoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="TourServiceInfoService">
+    <wsdl:port name="TourServiceInfoPort" binding="tns:TourServiceInfoServiceSoapBinding">
+      <soap:address location="http://localhost:8080/webmini1/services/TourServiceInfoPort"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,17 @@
+<xs:schema xmlns:tns="http://www.webmini1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.webmini1" version="1.0">
+
+  <xs:element name="getTouristInfo" type="tns:getTouristInfo"/>
+
+  <xs:element name="getTouristInfoResponse" type="tns:getTouristInfoResponse"/>
+
+  <xs:complexType name="getTouristInfo">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="getTouristInfoResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
